@@ -22,7 +22,8 @@ const config: Config = {
   				foreground: 'hsl(var(--popover-foreground))'
   			},
   			primary: {
-  				DEFAULT: '#AFFDBA',
+  				DEFAULT: '#5BA565',
+  				light: '#AFFDBA',
   				dark: '#064c0f',
   				foreground: 'hsl(var(--primary-foreground))'
   			},
@@ -58,13 +59,11 @@ const config: Config = {
   				DEFAULT: 'hsl(var(--sidebar-background))',
   				foreground: 'hsl(var(--sidebar-foreground))',
   				primary: 'hsl(var(--sidebar-primary))',
-  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-  				accent: 'hsl(var(--sidebar-accent))',
-  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
-  				border: 'hsl(var(--sidebar-border))',
-  				ring: 'hsl(var(--sidebar-ring))',
-  				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
-  				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))'
+				'primary-foreground': 'hsl(var(--sidebar-primary-foreground))',
+				accent: 'hsl(var(--sidebar-accent))',
+				'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
+				border: 'hsl(var(--sidebar-border))',
+				ring: 'hsl(var(--sidebar-ring))'
   			}
   		},
   		borderRadius: {
