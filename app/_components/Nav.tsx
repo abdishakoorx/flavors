@@ -9,7 +9,7 @@ import Image from "next/image";
 
 function Nav() {
   return (
-    <div className="flex justify-between px-4 md:px-8 lg:px-12 items-center p-6">
+    <div className="flex justify-between px-4 md:px-8 lg:px-12 items-center p-6 bg-transparent">
       <div>
         <Image
           src={"/logo.webp"}
