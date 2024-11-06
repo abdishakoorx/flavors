@@ -9,7 +9,7 @@ import Image from "next/image";
 
 function Nav() {
   return (
-    <div className="flex justify-between px-4 md:px-8 lg:px-12 items-center p-6 bg-transparent">
+    <div className="flex justify-between items-center p-6 bg-transparent">
       <div>
         <Image
           src={"/logo.webp"}
@@ -20,8 +20,8 @@ function Nav() {
         />
       </div>
 
-      <div className="flex gap-2 md:gap-6 items-center">
-        <Button className="p-4 md:p-5 rounded-3xl bg-primary-dark dark:hover:bg-accent hover:bg-primary-dark text-gray-100 dark:text-gray-800 dark:bg-primary-light border-none md:text-lg text-base font-sans font-semibold shadow-none">
+      <div className="flex gap-1 md:gap-6 items-center">
+        <Button className="p-4 md:p-5 rounded-3xl bg-primary-dark dark:hover:bg-primary-light hover:bg-primary-dark text-gray-100 dark:text-gray-800 dark:bg-primary-light border-none md:text-lg text-base font-sans font-semibold shadow-none">
           <RegisterLink>Register</RegisterLink>
         </Button>
         <Button
