@@ -1,39 +1,34 @@
+"use client";
 import { ModeToggle } from "@/components/ui/mode-toggler";
 import React from "react";
-import {
-  RegisterLink,
-  LoginLink,
-} from "@kinde-oss/kinde-auth-nextjs/components";
+import { LoginLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { Button } from "@/components/ui/button";
 import Image from "next/image";
+import { useTheme } from "next-themes";
 
-function Nav() {
+const Nav = () => {
+  const { theme } = useTheme();
+
   return (
-    <div className="flex justify-between items-center p-6 bg-transparent">
-      <div>
-        <Image
-          src={"/logo.webp"}
-          alt="Logo"
-          height={400}
-          width={400}
-          className="h-8 md:h-10 w-40 md:w-56"
-        />
-      </div>
-
+    <nav className="flex justify-between items-center py-2 md:py-0 px-4 sm:px-8 md:px-12">
+      <Image
+        src={theme === "dark" ? "/logo-dark.webp" : "/logo.webp"}
+        alt="Logo"
+        height={400}
+        width={400}
+        className="h-16 md:h-24 w-40 md:w-56"
+      />
       <div className="flex gap-1 md:gap-6 items-center">
-        <Button className="p-4 md:p-5 rounded-3xl bg-primary-dark dark:hover:bg-primary-light hover:bg-primary-dark text-gray-100 dark:text-gray-800 dark:bg-primary-light border-none md:text-lg text-base font-sans font-semibold shadow-none">
-          <RegisterLink>Register</RegisterLink>
-        </Button>
         <Button
           variant="outline"
-          className="p-4 md:p-5 border-none rounded-3xl text-lg font-sans font-semibold dark:hover:bg-transparent hover:bg-transparent shadow-none"
+          className="px-4 border-2 border-secondary-dark dark:border-accent-dark rounded-lg text-lg font-sans font-semibold dark:hover:bg-transparent hover:bg-transparent"
         >
           <LoginLink>Login</LoginLink>
         </Button>
         <ModeToggle />
       </div>
-    </div>
+    </nav>
   );
-}
+};
 
 export default Nav;
