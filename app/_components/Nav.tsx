@@ -10,7 +10,7 @@ const Nav = () => {
   const { theme } = useTheme();
 
   return (
-    <nav className="flex justify-between items-center py-2 md:py-0 px-4 sm:px-8 md:px-12">
+    <nav className="flex justify-between items-center py-2 md:py-0 px-4 sm:px-8 md:px-12 sticky z-0">
       <Image
         src={theme === "dark" ? "/logo-dark.webp" : "/logo.webp"}
         alt="Logo"
