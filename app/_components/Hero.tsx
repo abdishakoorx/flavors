@@ -1,5 +1,4 @@
 "use client";
-import AvatarList from "@/components/ui/avatarlist";
 import { Button } from "@/components/ui/button";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 import React from "react";
@@ -33,7 +32,6 @@ function Hero() {
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
       </div>
-      <AvatarList/>
     </div>
   );
 }
