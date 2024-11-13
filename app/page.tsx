@@ -12,15 +12,17 @@ import Footer from "./_components/Footer";
 export default function Home() {
   return (
     <div className="space-y-20">
-      <main className="md:px-8 lg:px-12 space-y-20">
+      <main className="md:px-8 lg:px-12">
         <Nav />
         <Hero />
-        <OfferingSection />
-        <HowItWorks />
-        <Pricing />
-        <FAQSection />
-        <Testimonial />
-        <CTASection />
+        <div className="space-y-20">
+          <OfferingSection />
+          <HowItWorks />
+          <Pricing />
+          <FAQSection />
+          <Testimonial />
+          <CTASection />
+        </div>
       </main>
       <Footer />
     </div>

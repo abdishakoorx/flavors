@@ -5,7 +5,7 @@ import React from "react";
 
 function Hero() {
   return (
-    <div className="px-4 md:px-8 lg:px-12 mt-12">
+    <div className="px-4 md:px-8 lg:px-12 mt-6">
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {/* writting */}
         <div className="mt-8">
@@ -28,7 +28,7 @@ function Hero() {
           </Button>
         </div>
         {/* video */}
-        <video autoPlay loop muted className="rounded-lg shadow-md mt-3">
+        <video autoPlay loop muted className="rounded-lg shadow-md mt-5">
           <source src="/hero-video.mp4" type="video/mp4" />
         </video>
       </div>
