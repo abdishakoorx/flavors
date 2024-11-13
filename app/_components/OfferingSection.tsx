@@ -10,7 +10,7 @@ export default function OfferingSection() {
             Tailored AI Recipe Creation
           </h2>
 
-          <p className="mx-auto mt-4 text-xl leading-relaxed dark:text-gray-400 text-gray-700 tracking-wide max-w-3xl">
+          <p className="mx-auto mt-4 text-lg leading-relaxed dark:text-gray-400 text-gray-700 tracking-wide max-w-3xl">
             Discover personalized recipes for every dietary preference. Our AI
             chef creates delicious meals tailored to keto, vegan, and balanced
             diets, ensuring everyone finds their perfect culinary match.
@@ -20,7 +20,7 @@ export default function OfferingSection() {
         <ul className="mt-8 grid grid-cols-1 gap-4 lg:grid-cols-3">
           <li className="relative">
             <Image
-              src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              src="/keto.jpg"
               alt="Keto diet meal"
               width={600}
               height={600}
@@ -36,7 +36,7 @@ export default function OfferingSection() {
 
           <li className="relative">
             <Image
-              src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              src="/vegan.jpg"
               alt="Vegan meal"
               width={600}
               height={600}
@@ -52,7 +52,7 @@ export default function OfferingSection() {
 
           <li className="lg:col-span-2 lg:col-start-2 lg:row-span-2 lg:row-start-1 relative">
             <Image
-              src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80"
+              src="/balanced.jpg"
               alt="Balanced diet meal"
               width={1200}
               height={1200}

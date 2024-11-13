@@ -21,9 +21,9 @@ function Hero() {
             <span className="font-medium">restaurant-quality</span> plating
             designs — all in seconds.
           </h2>
-          <Button className="mt-8 p-4 md:p-5 rounded-3xl bg-primary-dark dark:hover:bg-primary-light hover:bg-primary-dark text-gray-100 dark:text-gray-800 dark:bg-primary-light border-none md:text-lg text-base font-sans font-semibold shadow-none">
+          <Button className="mt-12 px-12 py-8 rounded-full bg-primary-dark dark:hover:bg-primary-light hover:bg-primary-dark text-gray-100 dark:text-gray-800 dark:bg-primary-light border-none md:text-lg text-base font-sans font-semibold shadow-none">
             <RegisterLink className="flex items-center">
-              Get Started
+              Start Creating Free Recipes
             </RegisterLink>
           </Button>
         </div>

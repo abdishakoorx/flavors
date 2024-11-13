@@ -1,4 +1,7 @@
+"use client";
+import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs";
 import { Users, Carrot, ChefHat, Clock } from "lucide-react";
 
 const steps = [
@@ -50,6 +53,13 @@ export default function HowItWorks() {
               </CardContent>
             </Card>
           ))}
+        </div>
+        <div className="flex justify-center ">
+          <Button className="mt-12 px-12 py-8 rounded-full bg-primary-dark dark:hover:bg-primary-light hover:bg-primary-dark text-gray-100 dark:text-gray-800 dark:bg-primary-light border-none md:text-lg text-base font-sans font-semibold shadow-none">
+            <RegisterLink className="flex items-center">
+              Start Creating Free Recipes
+            </RegisterLink>
+          </Button>
         </div>
       </div>
     </section>
