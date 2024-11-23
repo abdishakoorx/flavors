@@ -1,33 +1,33 @@
-"use client";
-import * as React from "react";
+"use client"
+
+import * as React from "react"
 import {
-  HelpCircle,
-  Phone,
-  Settings,
   BookOpen,
-  ShoppingCart,
-  Calendar,
-  ChefHat,
-  Utensils,
-  Shuffle,
-  TrendingUp,
-  Plus,
-  Leaf
-} from "lucide-react";
-import { NavMain } from "@/components/nav-main";
-import { NavSecondary } from "@/components/nav-secondary";
-import { NavUser } from "@/components/nav-user";
+  Bot,
+  Command,
+  Frame,
+  LifeBuoy,
+  Map,
+  PieChart,
+  Send,
+  Settings2,
+  SquareTerminal,
+} from "lucide-react"
+
+import { NavMain } from "@/components/nav-main"
+import { NavProjects } from "@/components/nav-projects"
+import { NavSecondary } from "@/components/nav-secondary"
+import { NavUser } from "@/components/nav-user"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
   SidebarMenu,
+  SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar";
-import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
-import Image from "next/image";
-import { useTheme } from "next-themes";
+} from "@/components/ui/sidebar"
+import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs"
 
 const data = {
   user: {
@@ -37,125 +37,151 @@ const data = {
   },
   navMain: [
     {
-      title: "Quick Actions",
+      title: "Playground",
       url: "#",
-      icon: Plus,
+      icon: SquareTerminal,
+      isActive: true,
       items: [
         {
-          title: "New Recipe",
-          url: "/create-recipe",
+          title: "History",
+          url: "#",
         },
         {
-          title: "Meal Planner",
-          url: "/meal-planner",
+          title: "Starred",
+          url: "#",
+        },
+        {
+          title: "Settings",
+          url: "#",
         },
       ],
     },
     {
-      title: "On-the-Go Tools",
+      title: "Models",
       url: "#",
-      icon: Utensils,
+      icon: Bot,
       items: [
         {
-          title: "Create Shopping List",
-          url: "/shopping-list",
+          title: "Genesis",
+          url: "#",
         },
         {
-          title: "Dietary Settings",
-          url: "/preferences",
+          title: "Explorer",
+          url: "#",
+        },
+        {
+          title: "Quantum",
+          url: "#",
         },
       ],
     },
     {
-      title: "Educational Resources",
+      title: "Documentation",
       url: "#",
       icon: BookOpen,
       items: [
         {
-          title: "Cooking Tips",
-          url: "/cooking-tips",
+          title: "Introduction",
+          url: "#",
         },
         {
-          title: "Ingredient Guide",
-          url: "/ingredient-guide",
+          title: "Get Started",
+          url: "#",
+        },
+        {
+          title: "Tutorials",
+          url: "#",
+        },
+        {
+          title: "Changelog",
+          url: "#",
         },
       ],
     },
     {
-      title: "Explore Recipes",
+      title: "Settings",
       url: "#",
-      icon: ChefHat,
+      icon: Settings2,
       items: [
         {
-          title: "Random Recipe",
-          url: "/random-recipe",
+          title: "General",
+          url: "#",
         },
         {
-          title: "Popular Picks",
-          url: "/popular",
+          title: "Team",
+          url: "#",
+        },
+        {
+          title: "Billing",
+          url: "#",
+        },
+        {
+          title: "Limits",
+          url: "#",
         },
       ],
     },
   ],
   navSecondary: [
     {
-      title: "FAQ",
-      url: "/faq",
-      icon: HelpCircle,
+      title: "Support",
+      url: "#",
+      icon: LifeBuoy,
     },
     {
-      title: "Support",
-      url: "/support",
-      icon: Phone,
+      title: "Feedback",
+      url: "#",
+      icon: Send,
     },
   ],
-};
+  projects: [
+    {
+      name: "Design Engineering",
+      url: "#",
+      icon: Frame,
+    },
+    {
+      name: "Sales & Marketing",
+      url: "#",
+      icon: PieChart,
+    },
+    {
+      name: "Travel",
+      url: "#",
+      icon: Map,
+    },
+  ],
+}
 
-export function AppSidebar({ ...props }: React.ComponentProps<"div">) {
-  const { isAuthenticated, isLoading, user } = useKindeAuth();
-  const { theme } = useTheme();
-
+export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+  const { isAuthenticated, isLoading } = useKindeAuth()
   return (
-    <Sidebar {...props}>
-      <SidebarHeader className="border-b">
-        <div className="flex h-14 items-center px-4">
-          {theme === 'dark' ? (
-            <Image
-              src="/logo-dark.png"
-              alt="Logo"
-              width={32}
-              height={32}
-              className="mr-2"
-            />
-          ) : (
-            <Image
-              src="/logo-light.png"
-              alt="Logo"
-              width={32}
-              height={32}
-              className="mr-2"
-            />
-          )}
-          <span className="text-lg font-semibold">Recipe Hub</span>
-        </div>
+    <Sidebar variant="inset" {...props}>
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton size="lg" asChild>
+              <a href="#">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                  <Command className="size-4" />
+                </div>
+                <div className="grid flex-1 text-left text-sm leading-tight">
+                  <span className="truncate font-semibold">Acme Inc</span>
+                  <span className="truncate text-xs">Enterprise</span>
+                </div>
+              </a>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
       </SidebarHeader>
-      
       <SidebarContent>
         <NavMain items={data.navMain} />
-        <NavSecondary items={data.navSecondary} />
+        <NavProjects projects={data.projects} />
+        <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
-      
       <SidebarFooter>
-        {isAuthenticated && !isLoading && (
-          <NavUser
-            user={{
-              name: data.user.name,
-              email: data.user.email,
-              avatar: data.user.avatar,
-            }}
-          />
-        )}
+        {isAuthenticated && !isLoading && <NavUser />}
       </SidebarFooter>
     </Sidebar>
-  );
+  )
 }
