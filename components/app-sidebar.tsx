@@ -1,23 +1,22 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 import {
   BookOpen,
-  Bot,
   Command,
   Frame,
   LifeBuoy,
   Map,
-  PieChart,
   Send,
-  Settings2,
+  ShoppingBasket,
   SquareTerminal,
-} from "lucide-react"
+  Weight,
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
-import { NavProjects } from "@/components/nav-projects"
-import { NavSecondary } from "@/components/nav-secondary"
-import { NavUser } from "@/components/nav-user"
+import { NavMain } from "@/components/nav-main";
+import { NavProjects } from "@/components/nav-projects";
+import { NavSecondary } from "@/components/nav-secondary";
+import { NavUser } from "@/components/nav-user";
 import {
   Sidebar,
   SidebarContent,
@@ -26,18 +25,13 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-} from "@/components/ui/sidebar"
-import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs"
+} from "@/components/ui/sidebar";
+import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
 
 const data = {
-  user: {
-    name: "shadcn",
-    email: "m@example.com",
-    avatar: "/avatars/shadcn.jpg",
-  },
   navMain: [
     {
-      title: "Playground",
+      title: "Overview",
       url: "#",
       icon: SquareTerminal,
       isActive: true,
@@ -47,79 +41,51 @@ const data = {
           url: "#",
         },
         {
-          title: "Starred",
-          url: "#",
-        },
-        {
-          title: "Settings",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Models",
-      url: "#",
-      icon: Bot,
-      items: [
-        {
-          title: "Genesis",
-          url: "#",
-        },
-        {
-          title: "Explorer",
-          url: "#",
-        },
-        {
-          title: "Quantum",
-          url: "#",
-        },
-      ],
-    },
-    {
-      title: "Documentation",
-      url: "#",
-      icon: BookOpen,
-      items: [
-        {
-          title: "Introduction",
-          url: "#",
-        },
-        {
-          title: "Get Started",
-          url: "#",
-        },
-        {
           title: "Tutorials",
           url: "#",
         },
+      ],
+    },
+    {
+      title: "Meals",
+      url: "#",
+      icon: ShoppingBasket,
+      items: [
         {
-          title: "Changelog",
+          title: "Meal Planner",
+          url: "#",
+        },
+        {
+          title: "Grocery Shooper",
+          url: "#",
+        },
+        {
+          title: "Recipe Builder",
           url: "#",
         },
       ],
     },
     {
-      title: "Settings",
+      title: "Blogs",
       url: "#",
-      icon: Settings2,
-      items: [
-        {
-          title: "General",
-          url: "#",
-        },
-        {
-          title: "Team",
-          url: "#",
-        },
-        {
-          title: "Billing",
-          url: "#",
-        },
-        {
-          title: "Limits",
-          url: "#",
-        },
-      ],
+      icon: BookOpen,
+    },
+  ],
+  projects: [
+    {
+      name: "Nutritionist",
+      url: "#",
+      icon: Frame,
+    },
+    {
+      name: "Gym bros",
+      url: "#",
+      icon: Weight,
+    },
+    {
+      name: "Travel",
+      url: "#",
+      icon: Map,
     },
   ],
   navSecondary: [
@@ -134,27 +100,10 @@ const data = {
       icon: Send,
     },
   ],
-  projects: [
-    {
-      name: "Design Engineering",
-      url: "#",
-      icon: Frame,
-    },
-    {
-      name: "Sales & Marketing",
-      url: "#",
-      icon: PieChart,
-    },
-    {
-      name: "Travel",
-      url: "#",
-      icon: Map,
-    },
-  ],
-}
+};
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
-  const { isAuthenticated, isLoading } = useKindeAuth()
+  const { isAuthenticated, isLoading } = useKindeAuth();
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>
@@ -166,8 +115,8 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
-                  <span className="truncate font-semibold">Acme Inc</span>
-                  <span className="truncate text-xs">Enterprise</span>
+                  <span className="truncate font-semibold">Fatty</span>
+                  <span className="truncate text-xs">Sauce</span>
                 </div>
               </a>
             </SidebarMenuButton>
@@ -183,5 +132,5 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         {isAuthenticated && !isLoading && <NavUser />}
       </SidebarFooter>
     </Sidebar>
-  )
+  );
 }
