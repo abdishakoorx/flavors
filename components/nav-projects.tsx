@@ -14,7 +14,6 @@ export function NavProjects({
 }: {
   projects: {
     name: string;
-    url: string;
     icon: LucideIcon;
   }[];
 }) {
@@ -25,10 +24,10 @@ export function NavProjects({
         {projects.map((item) => (
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
-              <a href={item.url}>
+              <div>
                 <item.icon className="text-secondary dark:text-secondary-dark" />
                 <span>{item.name}</span>
-              </a>
+              </div>
             </SidebarMenuButton>
           </SidebarMenuItem>
         ))}

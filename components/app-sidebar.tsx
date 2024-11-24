@@ -27,72 +27,70 @@ import {
   SidebarMenuItem,
 } from "@/components/ui/sidebar";
 import { useKindeAuth } from "@kinde-oss/kinde-auth-nextjs";
+import Link from "next/link";
 
 const data = {
   navMain: [
     {
       title: "Overview",
-      url: "#",
+      url: "/in",
       icon: SquareTerminal,
       isActive: true,
       items: [
         {
           title: "Tutorials",
-          url: "#",
+          url: "/in",
         },
       ],
     },
     {
       title: "Meals",
-      url: "#",
+      url: "/in/meal-planner",
       icon: ShoppingBasket,
       items: [
         {
           title: "Meal Planner",
-          url: "#",
+          url: "/in/meal-planner",
         },
         {
           title: "Grocery Shooper",
-          url: "#",
+          url: "/in/grocery-shopper",
         },
         {
           title: "Recipe Builder",
-          url: "#",
+          url: "/in/recipe-builder",
         },
       ],
     },
     {
       title: "Blogs",
-      url: "#",
+      url: "/in/blogs",
       icon: BookOpen,
     },
   ],
   projects: [
     {
-      name: "Nutritionist",
-      url: "#",
+      name: "Nutritionist's Archive",
       icon: Frame,
     },
     {
       name: "Gym bros",
-      url: "#",
       icon: Weight,
     },
     {
-      name: "Travel",
-      url: "#",
+      name: "Tailored Cuisines",
       icon: Map,
     },
   ],
   navSecondary: [
     {
       title: "Support",
-      url: "#",
+      url: "/in",
       icon: LifeBuoy,
     },
     {
       title: "Feedback",
-      url: "#",
+      url: "/in",
       icon: Send,
     },
   ],
@@ -106,7 +104,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" asChild>
-              <a href="#">
+              <Link href={'/in'}>
                 <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>
@@ -114,7 +112,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                   <span className="truncate font-semibold">Fatty</span>
                   <span className="truncate text-xs">Sauce</span>
                 </div>
-              </a>
+              </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>

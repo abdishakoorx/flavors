@@ -26,7 +26,7 @@ export default function RootLayout({
               <ModeToggle />
             </div>
           </header>
-          {children}
+          <main className="px-10 p-4">{children}</main>
         </SidebarInset>
       </SidebarProvider>
     </main>
