@@ -37,10 +37,6 @@ const data = {
       isActive: true,
       items: [
         {
-          title: "History",
-          url: "#",
-        },
-        {
           title: "Tutorials",
           url: "#",
         },
